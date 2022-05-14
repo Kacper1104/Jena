@@ -1,0 +1,1070 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#"
+     xml:base="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:pizza="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza">
+        <rdfs:comment>A pizza ontology that describes various pizzas based on their toppings.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasIngreedient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isBaseOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCountryOfOrigin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasIngreedient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasIngreedient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasIngreedient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isIngredientOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCalorificContentValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCalorificContentValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanHotPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanHotPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_JalapenoPepperTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_JalapenoPepperTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AnchovyTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AnchovyTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CaperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CaperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheesyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheesyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#America"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#England"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#France"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Germany"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Italy"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_DeepPanBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_DeepPanBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ThinAndCrispyBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_FourCheesePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_FourCheesePizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_GreenPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_GreenPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_HamTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_HamTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_HighCaloriePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_HighCaloriePizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCalorificContentValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_LowCaloriePizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_InterestingPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_InterestingPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_JalapenoPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_JalapenoPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_LowCaloriePizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_LowCaloriePizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCalorificContentValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MargheritaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCountryOfOrigin"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Italy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MushroomTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MushroomTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NonVegetatianPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NonVegetatianPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetarianPizza"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetarianPizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OliveTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OliveTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OnionTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OnionTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ParmezanTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ParmezanTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasCalorificContentValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PrawnTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PrawnTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ProbeInconsistentTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ProbeInconsistentTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:comment>Classs should be inconsistent when the ontology is classiffied</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_RedPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_RedPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SalamiTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SalamiTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SohoPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SohoPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OliveTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ParmezanTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OliveTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ParmezanTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicinessValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Medium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicyBeefTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicyBeefTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ThinAndCrispyBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ThinAndCrispyBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TunaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TunaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_UnclosedPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_UnclosedPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MozarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_ValuePartition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetarianPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetarianPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#hasTopping"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#America -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#America">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#England -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#England">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-Americana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-Americana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanaPizza"/>
+        <hasCalorificContentValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">565</hasCalorificContentValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-Margharita -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-Margharita">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MargheritaPizza"/>
+        <hasCalorificContentValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">263</hasCalorificContentValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-QuattroFromaggio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Example-QuattroFromaggio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_FourCheesePizza"/>
+        <hasCalorificContentValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">723</hasCalorificContentValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#France">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Germany -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Germany">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Italy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#Italy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanHotPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AmericanaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MargheritaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SohoPizza"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_AnchovyTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PrawnTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TunaTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CaperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MushroomTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OliveTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_OnionTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_TomatoTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_CheeseTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_MeatTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SeafoodTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_VegetableTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_GreenPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_JalapenoPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_RedPepperTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_HamTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PepperoniTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SalamiTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_SpicyBeefTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Hot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Medium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Mild"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_Pizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaBase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#kk_PizzaTopping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
