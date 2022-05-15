@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 public class Main {
 
     private static final String URI = "http://www.semanticweb.org/kacper/ontologies/2022/2/pizza#";
-    private static final String FILE_PATH = "D:\\src\\java\\JENA\\src\\main\\ontologies\\pizza.owl";
-    private static final String TARGET_PATH = "D:\\src\\java\\JENA\\src\\main\\ontologies\\pizza_jena.owl";
+    private static final String FILE_PATH = "src\\main\\ontologies\\pizza.owl";
+    private static final String TARGET_PATH = "src\\main\\ontologies\\pizza_jena.owl";
 
     public static void main(String[] args){
         OntModel model = createNewModel();
